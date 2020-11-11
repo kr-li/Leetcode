@@ -1,17 +1,15 @@
 public class Offer16 {
     public static void main(String[] args) {
-
+        double x = myPow(2,3);
+        System.out.println(x);
     }
 
-    public double myPow(double x, int n) {
+    public static double myPow(double x, int n) {
         double result = 1.0;
-        for (int i = n; i != 0; i /= 2, x *= x) {
-            if (i % 2 != 0) {
-                //i是奇数
-                result *= x;
-            }
+        for (int i = 1; i <= n; i ++) {
+            result *= x;
         }
-        return n < 0 ? 1.0 / result : result;
+        return result;
     }
 
 
