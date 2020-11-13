@@ -5,11 +5,12 @@ public class Offer16 {
     }
 
     public static double myPow(double x, int n) {
-        double result = 1.0;
-        for (int i = 1; i <= n; i ++) {
-            result *= x;
-        }
-        return result;
+        if (n == 0)
+            return 1;
+        //如果n小于0，把它改为正数，并且把1/x提取出来一个
+        if (n < 0)
+            return 1 / x * myPow(1 / x, -n - 1);
+        return (n % 2 == 0) ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
     }
 
 
