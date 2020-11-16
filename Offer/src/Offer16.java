@@ -1,6 +1,6 @@
 public class Offer16 {
     public static void main(String[] args) {
-        double x = myPow(2,3);
+        double x = myPow(2,-3);
         System.out.println(x);
     }
 
