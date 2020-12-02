@@ -22,7 +22,7 @@ public class Leetcode107 {
                     queue.offer(node.right);
                 }
             }
-            ans.add(0, level);
+            ans.add(0, level);//在位置0添加level列表
         }
         return ans;
     }

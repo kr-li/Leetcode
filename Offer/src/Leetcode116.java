@@ -1,24 +1,22 @@
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Queue;
 
-/**
- * 求一个二叉树每层平均值
- */
+public class Leetcode116 {
 
-public class Leetcode637 {
-
-    public List<Double> averageOfLevels(TreeNode root) {
-        List<Double> ans = new ArrayList<>();
-        if (root == null) return ans;
+    public TreeNode connect(TreeNode root) {
+        if (root == null) return null;
 
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
-
         while (!queue.isEmpty()){
             int size = queue.size();
-            double sum = 0;
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                sum += node.val;
+
+                if (i < size - 1){
+                    node.next = queue.peek();
+                }
+
                 if (node.left != null){
                     queue.add(node.left);
                 }
@@ -26,8 +24,7 @@ public class Leetcode637 {
                     queue.add(node.right);
                 }
             }
-            ans.add(sum / size);
         }
-        return ans;
+        return root;
     }
 }
