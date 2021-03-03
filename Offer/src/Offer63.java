@@ -12,6 +12,7 @@ public class Offer63 {
         return ans;
     }
 
+    //test
     public int maxProfit2(int[] prices){
         int[] dp = new int[prices.length];
         int minPrice = prices[0];
